@@ -45,8 +45,6 @@ class PlaceData(BaseModel):
     price: Optional[int] = None
     time: Optional[int] = None
     address: Optional[str] = None
-    tags: Optional[List[str]] = None
-    transport: Optional[str] = None
 
 
 # Поддерживаем user_query и query
@@ -61,9 +59,6 @@ class PlaceResultWithScore(BaseModel):
     description: str
     price: int
     time: int
-    address: Optional[str] = ""
-    tags: List[str] = []
-    transport: Optional[str] = ""
     similarity_score: float
 
 
@@ -131,8 +126,7 @@ def normalize_place(place: dict) -> dict:
 def build_perplexity_messages_for_place(place_title: str, user_query: str) -> list:
     system_content = (
         'Ты эксперт по туризму. Для указанного места верни ТОЛЬКО JSON-объект '
-        'с ключами: {"title":"...","description":"...","price":ЧИСЛО,"time":ЧИСЛО,'
-        '"address":"...","tags":[...],"transport":"..."} без лишнего текста.'
+        'с ключами: {"title":"...","description":"...","price":ЧИСЛО,"time":ЧИСЛО,} без лишнего текста.'
     )
     return [
         {"role": "system", "content": system_content},
