@@ -20,6 +20,7 @@ PERPLEXITY_API_KEY = os.getenv("PPLX_API_KEY")
 METADATA_FILE = "places_meta.json"
 EMBEDDINGS_FILE = "embeddings.npy"
 MODEL_NAME = "cointegrated/rubert-tiny"
+#MODEL_NAME = "sberbank-ai/sbert_large_nlu_ru"
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 SIMILARITY_THRESHOLD = 0.6
 OFF_TOPIC_THRESHOLD = 0.3
