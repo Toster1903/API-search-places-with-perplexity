@@ -1,0 +1,8 @@
+services:
+  app:
+    build:
+      context: .
+    container_name: api
+    ports:
+      - "8001:8001"
+    restart: unless-stopped
