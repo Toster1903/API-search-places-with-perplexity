@@ -37,7 +37,7 @@ uvicorn perplexity_search:app --host 0.0.0.0 --port 8000 --reload
 
 ### 4. Про примеры запросов
 
-POST `/search`
+POST `/search_v2`
 ```json
 
 {
@@ -54,7 +54,7 @@ POST `/search`
 Ответ — структура:
 
 - Если есть релевантные места:  
-  ```json
+```json
 {
   "results": [
     {
@@ -68,7 +68,8 @@ POST `/search`
   "best_similarity": 0,
   "worst_similarity": 0
 }
-  ```
+
+```
 
 
 
